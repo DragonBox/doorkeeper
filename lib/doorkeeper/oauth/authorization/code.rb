@@ -15,8 +15,13 @@ module Doorkeeper
           @token ||= AccessGrant.create! access_grant_attributes
         end
 
-        def native_redirect
-          { action: :show, code: token.plaintext_token }
+        def oob_redirect
+          case pre_auth.redirect_uri
+          when Doorkeeper::OAuth::NonStandard::IETF_WG_OAUTH2_OOB
+            { action: :show, code: token.plaintext_token }
+          when Doorkeeper::OAuth::NonStandard::IETF_WG_OAUTH2_OOB_AUTO
+            { action: :show, code: token.plaintext_token }
+          end
         end
 
         def configuration

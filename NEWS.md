@@ -8,11 +8,15 @@ User-visible changes worth mentioning.
 ## master
 
 - [#PR] Add your PR description here.
+- [#1238] Better support for native app with support for custom scheme and localhost redirection.
+- [#1249]: Specify case sensitive uniqueness to remove Rails 6 deprecation message
+- [#1248] Display the Application Secret in HTML after creating a new application even when `hash_application_secrets` is used.
+- [#1248] Return the unhashed Application Secret in the JSON response after creating new application even when `hash_application_secrets` is used.
 
 ## 5.1.0
 
 - [#1243]: Add nil check operator in token checking at token introspection.
-- [#1241] Explaining foreign key options for resource owner in a single place
+- [#1241] Explaining foreign key options for resource owner in a single place.
 - [#1237] Allow to set blank redirect URI if Doorkeeper configured to use redirect URI-less grant flows.
 - [#1234] Fix `StaleRecordsCleaner` to properly work with big amount of records.
 - [#1228] Allow to explicitly set non-expiring tokens in `custom_access_token_expires_in` configuration
